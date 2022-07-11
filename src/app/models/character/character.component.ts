@@ -10,6 +10,7 @@ import { Mesh } from 'three';
 export class CharacterComponent implements OnInit {
   @Input() scale?: NgtVector3;
   @Input() position?: NgtVector3;
+  @Input() wireframe?: boolean;
 
   constructor() {}
 

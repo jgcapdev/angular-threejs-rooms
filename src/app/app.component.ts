@@ -9,9 +9,9 @@ import { HostListener } from '@angular/core';
 })
 export class AppComponent {
   background = new Color('lightblue');
-  positionX: number = 10;
-  positionY: number = 10;
-  positionZ: number = 10;
+  positionX: number = 0;
+  positionY: number = 0;
+  positionZ: number = 0;
   private speed: number = 0.2;
 
   title = 'angular-threejs-rooms';

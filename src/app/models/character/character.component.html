@@ -8,5 +8,8 @@
   [castShadow]="true"
 >
   <ngt-sphere-geometry [args]="[1]"></ngt-sphere-geometry>
-  <ngt-mesh-standard-material [color]="'yellow'"></ngt-mesh-standard-material>
+  <ngt-mesh-standard-material
+    [color]="'yellow'"
+    wireframe="{{ wireframe }}"
+  ></ngt-mesh-standard-material>
 </ngt-mesh>

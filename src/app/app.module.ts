@@ -7,9 +7,10 @@ import { environment } from '../environments/environment';
 
 // Components
 import { AppComponent } from './app.component';
-import { StandardRoomComponent } from './rooms/standard-room/standard-room.component';
+import { StandardRoomComponent } from './models/standard-room/standard-room.component';
 import { CharacterComponent } from './models/character/character.component';
 import { LightsComponent } from './lights/lights/lights.component';
+import { FloorComponent } from './models/floor/floor.component';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
@@ -20,8 +21,12 @@ import {
   NgtCanvasModule,
   NgtColorPipeModule,
   NgtFogPipeModule,
+  NgtPiPipeModule,
 } from '@angular-three/core';
-import { NgtAxesHelperModule } from '@angular-three/core/helpers';
+import {
+  NgtAxesHelperModule,
+  NgtCameraHelperModule,
+} from '@angular-three/core/helpers';
 import {
   NgtBoxGeometryModule,
   NgtConeGeometryModule,
@@ -44,6 +49,7 @@ import {
 } from '@angular-three/soba/controls';
 import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
+import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
 
 @NgModule({
   declarations: [
@@ -51,6 +57,7 @@ import { NgtMeshModule } from '@angular-three/core/meshes';
     StandardRoomComponent,
     CharacterComponent,
     LightsComponent,
+    FloorComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,6 +84,9 @@ import { NgtMeshModule } from '@angular-three/core/meshes';
     NgtMeshModule,
     NgtColorPipeModule,
     NgtFogPipeModule,
+    NgtCameraHelperModule,
+    NgtSobaTextModule,
+    NgtPiPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

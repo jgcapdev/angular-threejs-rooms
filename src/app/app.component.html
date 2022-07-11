@@ -2,16 +2,14 @@
   <ngt-canvas
     [shadows]="true"
     [scene]="{
-      fog: ['salmon', 1, 15] | fog,
       position: [0, 0, 0],
       background: background
     }"
     [camera]="{
-      fov: 60,
       near: 1,
       far: 1000,
-      position: [80, 60, 40],
-      up: [0, 0, 1]
+      fov: 60,
+      position: [60, 25, 55]
     }"
   >
     <!-- Lighs -->
@@ -21,6 +19,7 @@
     <app-character
       [position]="[positionX, positionZ, positionY]"
       [scale]="1"
+      [wireframe]="false"
     ></app-character>
 
     <!-- Rooms -->
@@ -32,18 +31,23 @@
     ></app-standard-room>
 
     <app-standard-room
-      [position]="[10, 40, 5]"
+      [position]="[15, 5, 50]"
       [args]="[20, 10, 10]"
       [scale]="1"
       [wireframe]="true"
     ></app-standard-room>
 
     <app-standard-room
-      [position]="[50, 10, 5]"
-      [args]="[20, 20, 10]"
+      [position]="[40, 5, 16]"
+      [args]="[20, 10, 10]"
       [scale]="1"
       [wireframe]="true"
     ></app-standard-room>
+
+    <app-floor
+      [position]="[0, 0, 0]"
+      [rotation]="[-0.5 | pi, 0, 0]"
+    ></app-floor>
 
     <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
     <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
