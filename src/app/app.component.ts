@@ -1,6 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Color } from 'three';
 import { HostListener } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppState } from './state/app.state';
+import { loadCryptos } from './state/actions/crypto.actions';
+import { selectListCryptos } from './state/selectors/cryptos.selectors';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +18,10 @@ export class AppComponent {
   positionY: number = 0;
   positionZ: number = 10;
   private speed: number = 0.2;
+
+  cryptos$: Observable<any> = new Observable();
+
+  constructor(private store: Store<AppState>) {}
 
   title = 'angular-threejs-rooms';
 
@@ -27,5 +36,10 @@ export class AppComponent {
     } else if (event.key == 'd') {
       this.positionX += this.speed;
     }
+  }
+
+  ngOnInit(): void {
+    this.store.dispatch(loadCryptos());
+    this.cryptos$ = this.store.select(selectListCryptos);
   }
 }

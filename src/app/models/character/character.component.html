@@ -6,6 +6,7 @@
   [position]="position"
   [scale]="scale"
   [castShadow]="true"
+  (click)="getAllCoins()"
 >
   <ngt-sphere-geometry [args]="[1]"></ngt-sphere-geometry>
   <ngt-mesh-standard-material

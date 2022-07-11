@@ -1,6 +1,7 @@
 // Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 // Configs
 import { environment } from '../environments/environment';
@@ -87,6 +88,7 @@ import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
     NgtCameraHelperModule,
     NgtSobaTextModule,
     NgtPiPipeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
