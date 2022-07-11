@@ -15,7 +15,11 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 // Angular Three
-import { NgtCanvasModule } from '@angular-three/core';
+import {
+  NgtCanvasModule,
+  NgtColorPipeModule,
+  NgtFogPipeModule,
+} from '@angular-three/core';
 import { NgtAxesHelperModule } from '@angular-three/core/helpers';
 import {
   NgtBoxGeometryModule,
@@ -65,6 +69,8 @@ import { NgtMeshModule } from '@angular-three/core/meshes';
     NgtSobaOrbitControlsModule,
     NgtStatsModule,
     NgtMeshModule,
+    NgtColorPipeModule,
+    NgtFogPipeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,11 +1,15 @@
 <div class="canvas-container">
-  <ngt-canvas>
+  <ngt-canvas
+    [shadows]="true"
+    [scene]="{ fog: ['salmon', 1, 15] | fog, position: [0, 0, 0] }"
+    [camera]="{ position: [30, 30, 30], up: [0, 0, 1] }"
+  >
     <ngt-mesh>
       <app-character></app-character>
       <app-standard-room></app-standard-room>
-      <ngt-mesh-basic-material></ngt-mesh-basic-material>
     </ngt-mesh>
 
+    <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
     <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
     <ngt-stats></ngt-stats>
   </ngt-canvas>
