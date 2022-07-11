@@ -1,4 +1,5 @@
 import { NgtRenderState, NgtVector3 } from '@angular-three/core';
+import { NgtBoxGeometry } from '@angular-three/core/geometries';
 import { Component, Input, OnInit } from '@angular/core';
 import { Mesh } from 'three';
 
@@ -8,6 +9,8 @@ import { Mesh } from 'three';
   styleUrls: ['./standard-room.component.css'],
 })
 export class StandardRoomComponent implements OnInit {
+  @Input() position?: NgtVector3;
+
   constructor() {}
 
   ngOnInit(): void {}
