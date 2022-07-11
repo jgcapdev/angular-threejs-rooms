@@ -4,8 +4,8 @@
     [scene]="{ fog: ['salmon', 1, 15] | fog, position: [0, 0, 0] }"
     [camera]="{ position: [30, 30, 30], up: [0, 0, 1] }"
   >
-   
-      <app-character></app-character>
+    
+      <app-character  [position]="[positionX, positionZ,positionY]"></app-character>
 
       <app-standard-room
         [position]="[10, 10, 10]"

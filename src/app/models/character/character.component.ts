@@ -9,7 +9,7 @@ import { Mesh } from 'three';
 })
 export class CharacterComponent implements OnInit {
   constructor() {}
-
+  @Input() position?: NgtVector3;
   ngOnInit(): void {}
 
   hovered = false;
@@ -19,5 +19,6 @@ export class CharacterComponent implements OnInit {
 
   onCubeBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
     const sphere = $event.object;
+    
   }
 }
