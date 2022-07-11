@@ -18,25 +18,31 @@
     <app-lights></app-lights>
 
     <!-- Character -->
-    <app-character [scale]="1"></app-character>
+    <app-character
+      [position]="[positionX, positionZ, positionY]"
+      [scale]="1"
+    ></app-character>
 
     <!-- Rooms -->
     <app-standard-room
       [position]="[10, 10, 10]"
       [args]="[20, 20, 20]"
       [scale]="1"
+      [wireframe]="true"
     ></app-standard-room>
 
     <app-standard-room
       [position]="[10, 40, 5]"
       [args]="[20, 10, 10]"
       [scale]="1"
+      [wireframe]="true"
     ></app-standard-room>
 
     <app-standard-room
       [position]="[50, 10, 5]"
       [args]="[20, 20, 10]"
       [scale]="1"
+      [wireframe]="true"
     ></app-standard-room>
 
     <ngt-axes-helper [args]="[100]"></ngt-axes-helper>

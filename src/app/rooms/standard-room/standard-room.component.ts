@@ -11,7 +11,8 @@ import { Mesh } from 'three';
 export class StandardRoomComponent implements OnInit {
   @Input() position?: NgtVector3;
   @Input() args?: any;
-  @Input('scale') scale?: NgtVector3;
+  @Input() scale?: NgtVector3;
+  @Input() wireframe?: boolean;
 
   constructor() {}
 
