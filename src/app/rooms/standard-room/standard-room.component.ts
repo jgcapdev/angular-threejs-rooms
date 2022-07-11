@@ -11,7 +11,6 @@ export class StandardRoomComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-  @Input() position?: NgtVector3;
 
   hovered = false;
   hovered1 = false;

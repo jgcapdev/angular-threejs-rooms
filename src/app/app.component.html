@@ -6,7 +6,16 @@
   >
     <ngt-mesh>
       <app-character></app-character>
+
       <app-standard-room></app-standard-room>
+
+      <app-standard-room></app-standard-room>
+
+      <ngt-mesh [position]="[0, -5, -30]" [scale]="0.5">
+        <app-standard-room></app-standard-room>
+      </ngt-mesh>
+
+      <ngt-mesh-basic-material></ngt-mesh-basic-material>
     </ngt-mesh>
 
     <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
