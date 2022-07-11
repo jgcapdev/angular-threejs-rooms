@@ -4,16 +4,10 @@
   (pointerover)="hovered = true"
   (pointerout)="hovered = false"
   [position]="position"
+  [scale]="scale"
+  [castShadow]="true"
 >
   <ngt-box-geometry [args]="args"></ngt-box-geometry>
-  <ngt-mesh-standard-material
-    transparent="true"
-    opacity="1"
-    wireframe="true"
-    envMapIntensity="0.4"
-    clearcoat="0.8"
-    clearcoatRoughness="0"
-    roughness="3"
-    metalness="0.3"
-  ></ngt-mesh-standard-material>
+  <ngt-mesh-standard-material [color]="'green'"></ngt-mesh-standard-material>
 </ngt-mesh>
+t

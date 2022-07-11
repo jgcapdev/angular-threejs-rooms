@@ -9,6 +9,7 @@ import { environment } from '../environments/environment';
 import { AppComponent } from './app.component';
 import { StandardRoomComponent } from './rooms/standard-room/standard-room.component';
 import { CharacterComponent } from './models/character/character.component';
+import { LightsComponent } from './lights/lights/lights.component';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
@@ -45,7 +46,12 @@ import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
 
 @NgModule({
-  declarations: [AppComponent, StandardRoomComponent, CharacterComponent],
+  declarations: [
+    AppComponent,
+    StandardRoomComponent,
+    CharacterComponent,
+    LightsComponent,
+  ],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}, {}),

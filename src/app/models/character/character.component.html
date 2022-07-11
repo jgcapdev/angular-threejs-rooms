@@ -4,16 +4,9 @@
   (pointerover)="hovered = true"
   (pointerout)="hovered = false"
   [position]="[0, 0, 0]"
+  [scale]="scale"
+  [castShadow]="true"
 >
   <ngt-sphere-geometry [args]="[1]"></ngt-sphere-geometry>
-  <ngt-mesh-standard-material
-    transparent="true"
-    opacity="1"
-    wireframe="true"
-    envMapIntensity="0.4"
-    clearcoat="0.8"
-    clearcoatRoughness="0"
-    roughness="3"
-    metalness="0.3"
-  ></ngt-mesh-standard-material>
+  <ngt-mesh-standard-material [color]="'yellow'"></ngt-mesh-standard-material>
 </ngt-mesh>

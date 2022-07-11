@@ -8,6 +8,8 @@ import { Mesh } from 'three';
   styleUrls: ['./character.component.css'],
 })
 export class CharacterComponent implements OnInit {
+  @Input('scale') scale?: NgtVector3;
+
   constructor() {}
 
   ngOnInit(): void {}
