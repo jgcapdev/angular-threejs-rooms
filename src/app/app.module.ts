@@ -7,7 +7,8 @@ import { environment } from '../environments/environment';
 
 // Components
 import { AppComponent } from './app.component';
-import { Room1Component } from './Rooms/Room1/room1.component';
+import { StandardRoomComponent } from './rooms/standard-room/standard-room.component';
+import { CharacterComponent } from './models/character/character.component';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
@@ -38,11 +39,9 @@ import {
 } from '@angular-three/soba/controls';
 import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
-import { SphereComponent } from './Objects/Sphere/sphere/sphere.component';
-
 
 @NgModule({
-  declarations: [AppComponent, Room1Component, SphereComponent],
+  declarations: [AppComponent, StandardRoomComponent, CharacterComponent],
   imports: [
     BrowserModule,
     StoreModule.forRoot({}, {}),

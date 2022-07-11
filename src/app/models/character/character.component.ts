@@ -3,33 +3,22 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Mesh } from 'three';
 
 @Component({
-  selector: 'app-sphere',
-  templateUrl: './sphere.component.html',
-  styleUrls: ['./sphere.component.css']
+  selector: 'app-character',
+  templateUrl: './character.component.html',
+  styleUrls: ['./character.component.css'],
 })
-export class SphereComponent implements OnInit  {
- 
+export class CharacterComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   @Input() position?: NgtVector3;
-  
 
   hovered = false;
   hovered1 = false;
-  hovered2=false
+  hovered2 = false;
   active = false;
-  
 
-  
   onCubeBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
     const sphere = $event.object;
-    
-    
   }
-
- 
-
 }

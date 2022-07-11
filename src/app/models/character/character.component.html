@@ -1,24 +1,19 @@
 <ngt-mesh
   (beforeRender)="onCubeBeforeRender($event)"
   (click)="active = !active"
-  
   (pointerover)="hovered = true"
   (pointerout)="hovered = false"
-
   [position]="[0, 0, 0]"
-  
 >
   <ngt-sphere-geometry [args]="[1]"></ngt-sphere-geometry>
   <ngt-mesh-standard-material
-
-    transparent = "true"
-    opacity = 1
-    wireframe = true
+    transparent="true"
+    opacity="1"
+    wireframe="true"
     envMapIntensity="0.4"
     clearcoat="0.8"
     clearcoatRoughness="0"
     roughness="3"
     metalness="0.3"
   ></ngt-mesh-standard-material>
-  
 </ngt-mesh>
