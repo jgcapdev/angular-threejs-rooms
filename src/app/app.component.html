@@ -13,7 +13,7 @@
     }"
   >
     <!-- Lighs -->
-    <app-lights></app-lights>
+    <app-lights [setLights]="true"></app-lights>
 
     <!-- Character -->
     <app-character
@@ -44,6 +44,7 @@
       [wireframe]="true"
     ></app-standard-room>
 
+    <!-- Floor -->
     <app-floor
       [position]="[0, 0, 0]"
       [rotation]="[-0.5 | pi, 0, 0]"
