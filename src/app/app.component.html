@@ -2,7 +2,19 @@
   <ngt-canvas>
     <ngt-mesh>
       <app-character></app-character>
+
+      <ngt-mesh   [position]="[50, 10, 0]" [scale]="2">
       <app-standard-room></app-standard-room>
+      </ngt-mesh>
+
+      
+      <app-standard-room></app-standard-room>
+      
+
+      <ngt-mesh   [position]="[0, -5, -30]" [scale]="0.5">
+          <app-standard-room></app-standard-room>
+      </ngt-mesh>
+
       <ngt-mesh-basic-material></ngt-mesh-basic-material>
     </ngt-mesh>
 
