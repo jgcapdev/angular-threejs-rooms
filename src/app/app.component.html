@@ -4,7 +4,7 @@
     [scene]="{ fog: ['salmon', 1, 15] | fog, position: [0, 0, 0] }"
     [camera]="{ position: [30, 30, 30], up: [0, 0, 1] }"
   >
-    <ngt-mesh>
+   
       <app-character></app-character>
 
       <app-standard-room
@@ -12,8 +12,16 @@
         [args]="[20, 20, 20]"
       ></app-standard-room>
 
-      <ngt-mesh-basic-material></ngt-mesh-basic-material>
-    </ngt-mesh>
+      <app-standard-room
+      [position]="[10, 40, 5]"
+      [args]="[20, 10, 10]"
+    ></app-standard-room>
+
+    <app-standard-room
+    [position]="[50, 10, 10]"
+    [args]="[10, 20, 15]"
+  ></app-standard-room>
+    
 
     <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
     <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
