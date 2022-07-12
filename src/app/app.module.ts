@@ -55,6 +55,14 @@ import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
 import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
 import { NgtValueAttributeModule } from '@angular-three/core/attributes';
+import {
+  NgtSobaEnvironmentModule,
+  NgtSobaSkyModule,
+} from '@angular-three/soba/staging';
+import {
+  NgtSobaGizmoHelperModule,
+  NgtSobaGizmoViewcubeModule,
+} from '@angular-three/soba/abstractions';
 
 @NgModule({
   declarations: [
@@ -95,6 +103,10 @@ import { NgtValueAttributeModule } from '@angular-three/core/attributes';
     NgtPiPipeModule,
     HttpClientModule,
     NgtValueAttributeModule,
+    NgtSobaEnvironmentModule,
+    NgtSobaSkyModule,
+    NgtSobaGizmoHelperModule,
+    NgtSobaGizmoViewcubeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
