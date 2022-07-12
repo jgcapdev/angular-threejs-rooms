@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { Color } from 'three';
 import { HostListener } from '@angular/core';
+import { NgtSobaText } from '@angular-three/soba/abstractions';
 
 @Component({
   selector: 'app-root',
@@ -8,6 +9,8 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  @ViewChild('text', { read: ElementRef }) divText?: QueryList<ElementRef>;
+
   background = new Color('lightblue');
   positionX: number = 10;
   positionY: number = 10;
@@ -19,6 +22,10 @@ export class AppComponent {
   constructor() {}
 
   ngOnInit(): void {}
+
+  ngAfterViewInit() {
+    console.log(this.divText);
+  }
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
