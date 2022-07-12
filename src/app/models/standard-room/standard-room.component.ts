@@ -2,6 +2,7 @@ import { NgtRenderState, NgtVector3 } from '@angular-three/core';
 import { NgtBoxGeometry } from '@angular-three/core/geometries';
 import { Component, Input, OnInit } from '@angular/core';
 import { Mesh } from 'three';
+import * as THREE from 'three';
 
 @Component({
   selector: 'app-standard-room',
@@ -13,6 +14,10 @@ export class StandardRoomComponent implements OnInit {
   @Input() args?: any;
   @Input() scale?: NgtVector3;
   @Input() wireframe?: boolean;
+
+  size: any = THREE.DoubleSide;
+
+  transparents = ['true', 'false', 'true', 'false', 'true', 'false'];
 
   constructor() {}
 
