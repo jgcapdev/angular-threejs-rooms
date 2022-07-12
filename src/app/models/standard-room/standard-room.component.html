@@ -9,6 +9,10 @@
 >
   <ngt-box-geometry [args]="args"></ngt-box-geometry>
   <ngt-mesh-standard-material
+    [map]="texture$ | async"
+    [aoMap]="textureAo$ | async"
+    [normalMap]="textureNormal$ | async"
+    [roughnessMap]="textureRoughness$ | async"
     *ngFor="let transparent of transparents; index as i"
     [side]="size"
     [attach]="['material', '' + i]"
