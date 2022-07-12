@@ -17,6 +17,8 @@ import { FloorComponent } from './models/floor/floor.component';
 // NgRx
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { cryptosReducer } from './state/reducers/cryptos.reducer';
+import { CryptosEffects } from './state/effects/cryptos.effects';
 
 // Angular Three
 import {
@@ -52,8 +54,7 @@ import {
 import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
 import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
-import { cryptosReducer } from './state/reducers/cryptos.reducer';
-import { CryptosEffects } from './state/effects/cryptos.effects';
+import { NgtValueAttributeModule } from '@angular-three/core/attributes';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { CryptosEffects } from './state/effects/cryptos.effects';
     NgtSobaTextModule,
     NgtPiPipeModule,
     HttpClientModule,
+    NgtValueAttributeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
