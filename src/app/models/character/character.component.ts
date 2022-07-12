@@ -1,6 +1,11 @@
 import { NgtRenderState, NgtVector3 } from '@angular-three/core';
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { CryptoService } from 'src/app/services/crypto.service';
+import { loadCryptos } from 'src/app/state/actions/crypto.actions';
+import { AppState } from 'src/app/state/app.state';
+import { selectListCryptos } from 'src/app/state/selectors/cryptos.selectors';
 import { Mesh } from 'three';
 
 @Component({
@@ -14,8 +19,12 @@ export class CharacterComponent implements OnInit {
   @Input() wireframe?: boolean;
 
   private coins: any = [];
+  cryptos$: Observable<any> = new Observable();
 
-  constructor(private cryptoService: CryptoService) {}
+  constructor(
+    private cryptoService: CryptoService,
+    private store: Store<AppState>
+  ) {}
   ngOnInit(): void {}
 
   hovered = false;
@@ -28,10 +37,7 @@ export class CharacterComponent implements OnInit {
   }
 
   getAllCoins() {
-    this.cryptoService.getMarkets().subscribe((res: any) => {
-      this.coins = res;
-
-      console.log(this.coins);
-    });
+    this.store.dispatch(loadCryptos());
+    this.cryptos$ = this.store.select(selectListCryptos);
   }
 }
