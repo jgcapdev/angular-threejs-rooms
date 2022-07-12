@@ -24,7 +24,7 @@
     <!-- Text -->
     <ngt-soba-text
       text="Angular Three Demo"
-      [position]="[0, 25, 20]"
+      [position]="[-8, 25, 20]"
       [rotation]="[0, 0.5 | pi, 0]"
       fontSize="6"
       outlineColor="white"
@@ -57,8 +57,8 @@
     ></app-standard-room>
 
     <app-standard-room
-      [position]="[40, 5, 16]"
-      [args]="[20, 10, 10]"
+      [position]="[50, 5, 16]"
+      [args]="[25, 8, 15]"
       [scale]="1"
       [wireframe]="false"
     ></app-standard-room>
@@ -88,6 +88,7 @@
       </ng-template>
     </ngt-soba-gizmo-helper>
 
+    <!-- Helpers -->
     <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
     <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
     <ngt-stats></ngt-stats>

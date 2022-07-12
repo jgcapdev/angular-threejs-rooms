@@ -9,16 +9,16 @@ import { HostListener } from '@angular/core';
 })
 export class AppComponent {
   background = new Color('lightblue');
-  positionX: number = 0;
-  positionY: number = 0;
+  positionX: number = 10;
+  positionY: number = 10;
   positionZ: number = 10;
   private speed: number = 0.2;
+
+  title = 'angular-threejs-rooms';
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  title = 'angular-threejs-rooms';
 
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
