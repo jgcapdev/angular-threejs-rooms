@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-three/cannon": "^5.5.0",
     "@angular-three/core": "^5.0.0",
     "@angular-three/schematics": "^5.5.0",
     "@angular-three/soba": "^5.5.0",
