@@ -2,6 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { EffectsFeatureModule, EffectsModule } from '@ngrx/effects';
 
 // Configs
 import { environment } from '../environments/environment';
@@ -51,6 +52,8 @@ import {
 import { NgtStatsModule } from '@angular-three/core/stats';
 import { NgtMeshModule } from '@angular-three/core/meshes';
 import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
+import { cryptosReducer } from './state/reducers/cryptos.reducer';
+import { CryptosEffects } from './state/effects/cryptos.effects';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,8 @@ import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot({ cryptos: cryptosReducer }),
+    EffectsModule.forRoot([CryptosEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production,

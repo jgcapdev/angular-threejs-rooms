@@ -23,6 +23,11 @@ export class AppComponent {
 
   constructor(private store: Store<AppState>) {}
 
+  ngOnInit(): void {
+    this.store.dispatch(loadCryptos());
+    this.cryptos$ = this.store.select(selectListCryptos);
+  }
+
   title = 'angular-threejs-rooms';
 
   @HostListener('document:keydown', ['$event'])
@@ -36,10 +41,5 @@ export class AppComponent {
     } else if (event.key == 'd') {
       this.positionX += this.speed;
     }
-  }
-
-  ngOnInit(): void {
-    this.store.dispatch(loadCryptos());
-    this.cryptos$ = this.store.select(selectListCryptos);
   }
 }
