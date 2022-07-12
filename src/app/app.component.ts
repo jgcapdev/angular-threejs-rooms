@@ -30,6 +30,10 @@ export class AppComponent {
       this.positionX -= this.speed;
     } else if (event.key == 'd') {
       this.positionX += this.speed;
+    }else if (event.key == 'e') {
+      this.positionY -= this.speed;
+    } else if (event.key == 'r') {
+      this.positionY += this.speed;
     }
   }
 }
