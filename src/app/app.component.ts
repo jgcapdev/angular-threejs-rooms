@@ -1,7 +1,7 @@
 import { Component, ElementRef, QueryList, ViewChild } from '@angular/core';
 import { Color } from 'three';
 import { HostListener } from '@angular/core';
-import { NgtSobaText } from '@angular-three/soba/abstractions';
+import * as dat from 'dat.gui';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,15 @@ import { NgtSobaText } from '@angular-three/soba/abstractions';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  @ViewChild('text', { read: ElementRef }) divText?: QueryList<ElementRef>;
+  @ViewChild('text', { read: ElementRef }) divText?: ElementRef;
 
   background = new Color('lightblue');
   positionX: number = 10;
   positionY: number = 10;
   positionZ: number = 10;
   private speed: number = 0.2;
+
+  // gui: dat.GUI = new dat.GUI();
 
   title = 'angular-threejs-rooms';
 
@@ -24,7 +26,7 @@ export class AppComponent {
   ngOnInit(): void {}
 
   ngAfterViewInit() {
-    console.log(this.divText);
+    // console.log(this.divText?.nativeElement.attributes);
   }
 
   @HostListener('document:keydown', ['$event'])

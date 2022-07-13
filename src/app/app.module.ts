@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { EffectsFeatureModule, EffectsModule } from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 
 // Configs
 import { environment } from '../environments/environment';
