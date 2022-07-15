@@ -1,17 +1,23 @@
-import { NgtRenderState, NgtVector3, NgtLoader } from '@angular-three/core';
+import {
+  NgtRenderState,
+  NgtVector3,
+  NgtLoader,
+  NgtTriple,
+} from '@angular-three/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Mesh } from 'three';
 import * as THREE from 'three';
 import { NgtTextureLoader } from '@angular-three/soba/loaders';
+import { NgtPhysicBody } from '@angular-three/cannon';
 
 @Component({
   selector: 'app-standard-room',
   templateUrl: './standard-room.component.html',
   styleUrls: ['./standard-room.component.css'],
-  providers: [NgtLoader, NgtTextureLoader],
+  providers: [NgtLoader, NgtTextureLoader, NgtPhysicBody],
 })
 export class StandardRoomComponent implements OnInit {
-  @Input() position?: NgtVector3;
+  @Input() position?: NgtTriple;
   @Input() args?: any;
   @Input() scale?: NgtVector3;
   @Input() wireframe?: boolean;
@@ -28,7 +34,10 @@ export class StandardRoomComponent implements OnInit {
   size: any = THREE.DoubleSide;
   transparents = ['true', 'false', 'true', 'false', 'true', 'false'];
 
-  constructor(private textureLoader: NgtTextureLoader) {}
+  constructor(
+    private textureLoader: NgtTextureLoader,
+    private physicBody: NgtPhysicBody
+  ) {}
 
   ngOnInit(): void {}
 
@@ -40,4 +49,8 @@ export class StandardRoomComponent implements OnInit {
   onCubeBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
     const cube = $event.object;
   }
+
+  boxRef = this.physicBody.useBox(() => ({
+    position: this.position,
+  }));
 }

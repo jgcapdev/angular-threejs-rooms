@@ -1,4 +1,5 @@
-import { NgtRenderState, NgtVector3 } from '@angular-three/core';
+import { NgtPhysicBody } from '@angular-three/cannon';
+import { NgtRenderState, NgtTriple, NgtVector3 } from '@angular-three/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -12,10 +13,11 @@ import { Mesh } from 'three';
   selector: 'app-character',
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css'],
+  providers: [NgtPhysicBody],
 })
 export class CharacterComponent implements OnInit {
   @Input() scale?: NgtVector3;
-  @Input() position?: NgtVector3;
+  @Input() position?: NgtTriple;
   @Input() wireframe?: boolean;
 
   private coins: any = [];
@@ -23,7 +25,8 @@ export class CharacterComponent implements OnInit {
 
   constructor(
     private cryptoService: CryptoService,
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private physicBody: NgtPhysicBody
   ) {}
   ngOnInit(): void {}
 
@@ -40,4 +43,9 @@ export class CharacterComponent implements OnInit {
     this.store.dispatch(loadCryptos());
     this.cryptos$ = this.store.select(selectListCryptos);
   }
+
+  sphereRef = this.physicBody.useSphere(() => ({
+    args: [1],
+    position: this.position,
+  }));
 }

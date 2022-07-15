@@ -1,22 +1,29 @@
-import { NgtEuler, NgtVector3, NgtLoader } from '@angular-three/core';
+import {
+  NgtEuler,
+  NgtVector3,
+  NgtLoader,
+  NgtTriple,
+} from '@angular-three/core';
 import { Component, OnInit, Input } from '@angular/core';
 import { NgtTextureLoader } from '@angular-three/soba/loaders';
 import { MeshStandardMaterialParameters, Texture, TextureLoader } from 'three';
 import * as THREE from 'three';
+import { NgtPhysicBody } from '@angular-three/cannon';
 
 @Component({
   selector: 'app-floor',
   templateUrl: './floor.component.html',
   styleUrls: ['./floor.component.css'],
-  providers: [NgtTextureLoader],
+  providers: [NgtTextureLoader, NgtPhysicBody],
 })
 export class FloorComponent implements OnInit {
-  @Input() position?: NgtVector3;
+  @Input() position?: NgtTriple;
   @Input() rotation?: NgtEuler;
 
   constructor(
     private textureLoader: NgtTextureLoader,
-    private loader: NgtLoader
+    private loader: NgtLoader,
+    private physicBody: NgtPhysicBody
   ) {}
 
   ngOnInit(): void {}
@@ -72,4 +79,8 @@ export class FloorComponent implements OnInit {
 
     return p;
   }
+
+  planeRef = this.physicBody.usePlane(() => ({
+    position: this.position,
+  }));
 }

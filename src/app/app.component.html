@@ -37,40 +37,42 @@
     >
     </ngt-soba-text>
 
-    <!-- Character -->
-    <app-character
-      [position]="[positionX, positionZ, positionY]"
-      [scale]="2"
-      [wireframe]="false"
-    ></app-character>
+    <ngt-physics>
+      <!-- Character -->
+      <app-character
+        [position]="[positionX, positionZ, positionY]"
+        [scale]="2"
+        [wireframe]="false"
+      ></app-character>
 
-    <!-- Rooms -->
-    <app-standard-room
-      [position]="[10, 10, 10]"
-      [args]="[20, 20, 20]"
-      [scale]="1"
-      [wireframe]="false"
-    ></app-standard-room>
+      <!-- Rooms -->
+      <app-standard-room
+        [position]="[10, 10, 10]"
+        [args]="[20, 20, 20]"
+        [scale]="1"
+        [wireframe]="false"
+      ></app-standard-room>
 
-    <app-standard-room
-      [position]="[15, 5, 50]"
-      [args]="[20, 10, 10]"
-      [scale]="1"
-      [wireframe]="false"
-    ></app-standard-room>
+      <app-standard-room
+        [position]="[15, 5, 50]"
+        [args]="[20, 10, 10]"
+        [scale]="1"
+        [wireframe]="false"
+      ></app-standard-room>
 
-    <app-standard-room
-      [position]="[50, 4, 16]"
-      [args]="[25, 8, 15]"
-      [scale]="1"
-      [wireframe]="false"
-    ></app-standard-room>
+      <app-standard-room
+        [position]="[50, 4, 16]"
+        [args]="[25, 8, 15]"
+        [scale]="1"
+        [wireframe]="false"
+      ></app-standard-room>
 
-    <!-- Floor -->
-    <app-floor
-      [position]="[0, -0.01, 0]"
-      [rotation]="[-0.5 | pi, 0, 0]"
-    ></app-floor>
+      <!-- Floor -->
+      <app-floor
+        [position]="[0, -0.01, 0]"
+        [rotation]="[-0.5 | pi, 0, 0]"
+      ></app-floor>
+    </ngt-physics>
 
     <!-- Gizmo Helper -->
     <ngt-soba-gizmo-helper

@@ -1,4 +1,9 @@
-<ngt-mesh [position]="position" [rotation]="rotation" [receiveShadow]="true">
+<ngt-mesh
+  [position]="position"
+  [rotation]="rotation"
+  [receiveShadow]="true"
+  [ref]="planeRef.ref"
+>
   <ngt-plane-geometry [args]="[200, 200]"></ngt-plane-geometry>
   <ngt-mesh-standard-material
     [color]="'green'"
