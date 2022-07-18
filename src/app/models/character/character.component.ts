@@ -31,7 +31,7 @@ export class CharacterComponent implements OnInit {
     position: this.position,
     rotation: this.rotation,
     onCollide(e) {
-      console.log("mi bebito");
+      console.log(e);
     },
   }));
   constructor(
