@@ -20,6 +20,10 @@ export class FloorComponent implements OnInit {
   @Input() position?: NgtTriple;
   @Input() rotation?: NgtTriple;
 
+  planeRef = this.physicBody.usePlane(() => ({
+    position: this.position,
+    rotation: this.rotation,
+  }));
   constructor(
     private textureLoader: NgtTextureLoader,
     private loader: NgtLoader,
@@ -79,9 +83,4 @@ export class FloorComponent implements OnInit {
 
     return p;
   }
-
-  planeRef = this.physicBody.usePlane(() => ({
-    position: this.position,
-    rotation: this.rotation,
-  }));
 }

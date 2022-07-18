@@ -4,7 +4,7 @@ import {
   NgtLoader,
   NgtTriple,
 } from '@angular-three/core';
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Mesh } from 'three';
 import * as THREE from 'three';
 import { NgtTextureLoader } from '@angular-three/soba/loaders';
@@ -14,13 +14,19 @@ import { NgtPhysicBody } from '@angular-three/cannon';
   selector: 'app-standard-room',
   templateUrl: './standard-room.component.html',
   styleUrls: ['./standard-room.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [NgtLoader, NgtTextureLoader, NgtPhysicBody],
 })
 export class StandardRoomComponent implements OnInit {
-  @Input() position?: NgtTriple;
+  @Input() position!: NgtTriple;
   @Input() args?: any;
   @Input() scale?: NgtVector3;
   @Input() wireframe?: boolean;
+
+  boxRef = this.physicBody.useBox(() => ({
+    position: this.position,
+    
+  }));
 
   readonly texture$ = this.textureLoader.load('assets/bricks/color.jpg');
   readonly textureAo$ = this.textureLoader.load(
@@ -50,7 +56,5 @@ export class StandardRoomComponent implements OnInit {
     const cube = $event.object;
   }
 
-  boxRef = this.physicBody.useBox(() => ({
-    position: this.position,
-  }));
+ 
 }

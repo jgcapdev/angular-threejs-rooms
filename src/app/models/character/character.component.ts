@@ -19,12 +19,21 @@ export class CharacterComponent implements OnInit {
   @Input() scale?: NgtVector3;
   @Input() position!: NgtTriple;
   @Input() wireframe?: boolean;
-
+  @Input() mass: number = 0.1;
+  @Input() controllable: boolean = false;
   private speed: number = 0.2;
-
+  rotation = [0, 0, 0] as NgtTriple;
   private coins: any = [];
   cryptos$: Observable<any> = new Observable();
 
+  sphereRef = this.physicBody.useSphere(() => ({
+    mass: 1,
+    position: this.position,
+    rotation: this.rotation,
+    onCollide(e) {
+      console.log("mi bebito");
+    },
+  }));
   constructor(
     private cryptoService: CryptoService,
     private store: Store<AppState>,
@@ -46,14 +55,6 @@ export class CharacterComponent implements OnInit {
     this.cryptos$ = this.store.select(selectListCryptos);
   }
 
-  sphereRef = this.physicBody.useSphere(() => ({
-    args: [1],
-    position: this.position,
-    onCollide(e) {
-      console.log(e);
-    },
-  }));
-
   @HostListener('document:keydown', ['$event'])
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key == 'w') {
@@ -68,18 +69,13 @@ export class CharacterComponent implements OnInit {
     } else if (event.key == 'd') {
       this.position[0] += this.speed;
       this.moveCharacter(this.position);
-    } else if (event.key == 'e') {
-      this.position[1] -= this.speed;
-      this.moveCharacter(this.position);
-    } else if (event.key == 'r') {
-      this.position[1] += this.speed;
-      this.moveCharacter(this.position);
+
     }
   }
 
   moveCharacter(position: any) {
     this.sphereRef.api.position.subscribe((pos) => {
-      if (this.position) {
+      if (this.position && this.controllable) {
         this.sphereRef.api.position.set(position[0], pos[1], position[2]);
       }
     });
