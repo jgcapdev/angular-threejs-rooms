@@ -64,6 +64,7 @@ import {
   NgtSobaGizmoViewcubeModule,
 } from '@angular-three/soba/abstractions';
 import { NgtPhysicsModule } from '@angular-three/cannon';
+import { SandboxPhysicCubesModule } from './three-physics.component';
 
 @NgModule({
   declarations: [
@@ -109,6 +110,7 @@ import { NgtPhysicsModule } from '@angular-three/cannon';
     NgtSobaGizmoHelperModule,
     NgtSobaGizmoViewcubeModule,
     NgtPhysicsModule,
+    SandboxPhysicCubesModule
   ],
   providers: [],
   bootstrap: [AppComponent],
