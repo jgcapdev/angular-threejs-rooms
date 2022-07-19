@@ -18,6 +18,7 @@
     <app-lights [setLights]="true"></app-lights>
 
     <!-- Sky and environment -->
+    <!-- Low performance -->
     <!-- <ngt-soba-environment
       files="assets/sky/adamsbridge.hdr"
     ></ngt-soba-environment>
@@ -39,13 +40,16 @@
 
     <ngt-physics>
       <!-- Character -->
-      <app-character [position]="[15, 10, 10]" [scale]="1" [controllable]="true"></app-character>
+      <app-character
+        [position]="[15, 10, 10]"
+        [scale]="1"
+        [controllable]="true"
+      ></app-character>
 
       <!-- Rooms -->
       <app-standard-room
         [args]="[20, 20, 20]"
         [position]="[10, 10, 10]"
-        
         [scale]="1"
       ></app-standard-room>
 
