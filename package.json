@@ -30,6 +30,7 @@
     "dat.gui": "^0.7.9",
     "rxjs": "~7.5.0",
     "three": "~0.141.0",
+    "three-instanced-group-mesh": "^1.0.2",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },

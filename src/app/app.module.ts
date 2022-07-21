@@ -52,7 +52,7 @@ import {
   NgtSobaOrbitControlsModule,
 } from '@angular-three/soba/controls';
 import { NgtStatsModule } from '@angular-three/core/stats';
-import { NgtMeshModule } from '@angular-three/core/meshes';
+import { NgtMeshModule , NgtInstancedMeshModule} from '@angular-three/core/meshes';
 import { NgtSobaTextModule } from '@angular-three/soba/abstractions';
 import { NgtValueAttributeModule } from '@angular-three/core/attributes';
 import {
@@ -64,7 +64,7 @@ import {
   NgtSobaGizmoViewcubeModule,
 } from '@angular-three/soba/abstractions';
 import { NgtPhysicsModule } from '@angular-three/cannon';
-
+import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 @NgModule({
   declarations: [
     AppComponent,
@@ -90,6 +90,8 @@ import { NgtPhysicsModule } from '@angular-three/cannon';
     NgtMeshBasicMaterialModule,
     NgtMeshStandardMaterialModule,
     NgtAmbientLightModule,
+    NgtPrimitiveModule,
+    
     NgtSpotLightModule,
     NgtPointLightModule,
     NgtDirectionalLightModule,
@@ -101,6 +103,7 @@ import { NgtPhysicsModule } from '@angular-three/cannon';
     NgtFogPipeModule,
     NgtCameraHelperModule,
     NgtSobaTextModule,
+    NgtInstancedMeshModule,
     NgtPiPipeModule,
     HttpClientModule,
     NgtValueAttributeModule,

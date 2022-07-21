@@ -1,13 +1,17 @@
 import { NgtPhysicBody } from '@angular-three/cannon';
 import { NgtRenderState, NgtTriple, NgtVector3 } from '@angular-three/core';
+import { NgtGLTFLoader } from '@angular-three/soba/loaders';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { AdamGLTF } from 'src/app/app.component';
 import { CryptoService } from 'src/app/services/crypto.service';
 import { loadCryptos } from 'src/app/state/actions/crypto.actions';
 import { AppState } from 'src/app/state/app.state';
 import { selectListCryptos } from 'src/app/state/selectors/cryptos.selectors';
 import { Mesh } from 'three';
+import { NgtInstancedMesh } from '@angular-three/core/meshes';
+import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 
 @Component({
   selector: 'app-character',
@@ -15,6 +19,7 @@ import { Mesh } from 'three';
   styleUrls: ['./character.component.css'],
   providers: [NgtPhysicBody],
 })
+
 export class CharacterComponent implements OnInit {
   @Input() scale?: NgtVector3;
   @Input() position!: NgtTriple;
@@ -26,18 +31,33 @@ export class CharacterComponent implements OnInit {
   private coins: any = [];
   cryptos$: Observable<any> = new Observable();
 
-  sphereRef = this.physicBody.useSphere(() => ({
+
+  readonly adam$ = this.gltfLoader.load('assets/adam.glb') as unknown as Observable<AdamGLTF>;
+
+  brazos = this.physicBody.useBox(() => ({
+  
+    mass:1
+
+  }));
+
+  sphereRef = this.physicBody.useSphere<THREE.InstancedMesh>(() => ({
     mass: 1,
     position: this.position,
     rotation: this.rotation,
     onCollide(e) {
-      console.log(e);
+      if (e.body.id === 22) {
+        console.log('llamamiento ngrx de algo de cubo 2');
+      }else if(e.body.id === 23){
+        console.log('llamamiento ngrx de algo de cubo 3');
+
+      }
     },
   }));
   constructor(
     private cryptoService: CryptoService,
     private store: Store<AppState>,
-    private physicBody: NgtPhysicBody
+    private physicBody: NgtPhysicBody,
+    private gltfLoader: NgtGLTFLoader
   ) {}
   ngOnInit(): void {}
 

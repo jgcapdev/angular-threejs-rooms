@@ -19,10 +19,12 @@ import { NgtPhysicBody } from '@angular-three/cannon';
 export class FloorComponent implements OnInit {
   @Input() position?: NgtTriple;
   @Input() rotation?: NgtTriple;
+  @Input() args!: any;
 
   planeRef = this.physicBody.usePlane(() => ({
     position: this.position,
     rotation: this.rotation,
+    args:this.args
   }));
   constructor(
     private textureLoader: NgtTextureLoader,

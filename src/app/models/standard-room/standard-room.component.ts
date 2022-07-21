@@ -19,12 +19,14 @@ import { NgtPhysicBody } from '@angular-three/cannon';
 })
 export class StandardRoomComponent implements OnInit {
   @Input() position!: NgtTriple;
-  @Input() args?: any;
-  @Input() scale?: NgtVector3;
-  @Input() wireframe?: boolean;
+  @Input() args!: NgtTriple;
+  @Input() scale!: NgtVector3;
+  @Input() wireframe!: boolean;
 
   boxRef = this.physicBody.useBox(() => ({
     position: this.position,
+    args:this.args,
+    mass:0.1
     
   }));
 
