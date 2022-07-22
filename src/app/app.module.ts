@@ -65,6 +65,7 @@ import {
 } from '@angular-three/soba/abstractions';
 import { NgtPhysicsModule } from '@angular-three/cannon';
 import { NgtPrimitiveModule } from '@angular-three/core/primitive';
+import { NgtGroupModule } from '@angular-three/core/group';
 @NgModule({
   declarations: [
     AppComponent,
@@ -110,6 +111,7 @@ import { NgtPrimitiveModule } from '@angular-three/core/primitive';
     NgtSobaEnvironmentModule,
     NgtSobaSkyModule,
     NgtSobaGizmoHelperModule,
+    NgtGroupModule,
     NgtSobaGizmoViewcubeModule,
     NgtPhysicsModule,
   ],

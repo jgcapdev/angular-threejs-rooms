@@ -21,7 +21,7 @@ import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
 })
 
 export class CharacterComponent implements OnInit {
-  @Input() scale?: NgtVector3;
+  @Input() scale!: NgtVector3;
   @Input() position!: NgtTriple;
   @Input() wireframe?: boolean;
   @Input() mass: number = 0.1;
@@ -34,11 +34,22 @@ export class CharacterComponent implements OnInit {
 
   readonly adam$ = this.gltfLoader.load('assets/adam.glb') as unknown as Observable<AdamGLTF>;
 
-  brazos = this.physicBody.useBox(() => ({
-  
-    mass:1
+  body = this.physicBody.useBox(() => ({
+    position: this.position,
+    
+    args:[1, 1, 1],
+    mass:1,
+    onCollide(e) {
+      if (e.body.id === 22) {
+        console.log('llamamiento ngrx de algo de cubo 2');
+      }else if(e.body.id === 23){
+        console.log('llamamiento ngrx de algo de cubo 3');
 
+      }
+    },
   }));
+    
+
 
   sphereRef = this.physicBody.useSphere<THREE.InstancedMesh>(() => ({
     mass: 1,
@@ -94,9 +105,9 @@ export class CharacterComponent implements OnInit {
   }
 
   moveCharacter(position: any) {
-    this.sphereRef.api.position.subscribe((pos) => {
+    this.body.api.position.subscribe((pos) => {
       if (this.position && this.controllable) {
-        this.sphereRef.api.position.set(position[0], pos[1], position[2]);
+        this.body.api.position.set(position[0], pos[1], position[2]);
       }
     });
   }

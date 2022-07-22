@@ -1,15 +1,14 @@
 <ng-container *ngIf="adam$ | async as adam">
-
-  <ngt-mesh
+<ngt-group [ref]="body.ref" [scale]="2" ><ngt-mesh
 
     (click)="getAllCoins()"
 
     [geometry]="adam.nodes.EyeLeft.geometry"
     [material]="adam.materials.Wolf3D_Eye"
     
-    [scale]="[20, 20, 20]"
+    
 
-    [position]="[20, 0, -20]"
+  
 
     [rotation]="[0, 0, 0]"
 
@@ -20,101 +19,101 @@
   
   <ngt-mesh
     (click)="getAllCoins()"
-    [position]="[20, 0, -20]"
+ 
     [geometry]="adam.nodes.Wolf3D_Body.geometry"
     [material]="adam.materials.Wolf3D_Body"
-    [scale]="[20, 20, 20]"
+   
     [rotation]="[0, 0, 0]"
     [castShadow]="true"
   ></ngt-mesh>
 
   <ngt-mesh
   (click)="getAllCoins()"
-  [position]="[20, 0, -20]"
+  
   [geometry]="adam.nodes.EyeRight.geometry"
   [material]="adam.materials.Wolf3D_Eye"
-  [scale]="[20, 20, 20]"
+ 
   [rotation]="[0, 0, 0]"
   [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Glasses.geometry"
 [material]="adam.materials.Wolf3D_Glasses"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Outfit_Bottom.geometry"
 [material]="adam.materials.Wolf3D_Outfit_Bottom"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Outfit_Footwear.geometry"
 [material]="adam.materials.Wolf3D_Outfit_Footwear"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Outfit_Top.geometry"
 [material]="adam.materials.Wolf3D_Outfit_Top"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Hair.geometry"
 [material]="adam.materials.Wolf3D_Hair"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Head.geometry"
 [material]="adam.materials.Wolf3D_Skin"
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
 
 <ngt-mesh
 (click)="getAllCoins()"
-[position]="[20, 0, -20]"
+
 [geometry]="adam.nodes.Wolf3D_Teeth.geometry"
 [material]="adam.materials.Wolf3D_Teeth"
 
-[scale]="[20, 20, 20]"
+
 [rotation]="[0, 0, 0]"
 [castShadow]="true"
 ></ngt-mesh>
-
+</ngt-group>
 </ng-container>
 
 
 
 
-<ng-container *ngIf="adam$ | async as adam">
+<!--<ng-container *ngIf="adam$ | async as adam">
   <ngt-mesh
   (beforeRender)="onCubeBeforeRender($event)"
   (click)="active = !active"
@@ -138,4 +137,4 @@
  
 </ng-container>
 
-[geometry]="adam.nodes.shoe.geometry"
+[geometry]="adam.nodes.shoe.geometry"-->
