@@ -9,3 +9,16 @@ export const loadedCryptos = createAction(
 );
 
 export const loadedCryptoError = createAction('[Crypto List] Loaded error');
+
+export const enterbox2 = createAction(
+  '[Box2 Enter] Box2 success',
+  props<{ msg: string }>()
+);
+export const enterbox3 = createAction(
+  '[Box3 Enter] Box3 success',
+  props<{ msg: string }>()
+);
+export const exitbox = createAction(
+  '[Exit Box] BoxExit',
+  props<{ msg: string }>()
+);

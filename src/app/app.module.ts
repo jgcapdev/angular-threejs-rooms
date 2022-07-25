@@ -66,6 +66,7 @@ import {
 import { NgtPhysicsModule } from '@angular-three/cannon';
 import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 import { NgtGroupModule } from '@angular-three/core/group';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +74,7 @@ import { NgtGroupModule } from '@angular-three/core/group';
     CharacterComponent,
     LightsComponent,
     FloorComponent,
+
   ],
   imports: [
     BrowserModule,

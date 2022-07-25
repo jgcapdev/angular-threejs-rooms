@@ -6,12 +6,14 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AdamGLTF } from 'src/app/app.component';
 import { CryptoService } from 'src/app/services/crypto.service';
-import { loadCryptos } from 'src/app/state/actions/crypto.actions';
+import { enterbox2, enterbox3, exitbox, loadCryptos } from 'src/app/state/actions/crypto.actions';
 import { AppState } from 'src/app/state/app.state';
 import { selectListCryptos } from 'src/app/state/selectors/cryptos.selectors';
 import { Mesh } from 'three';
 import { NgtInstancedMesh } from '@angular-three/core/meshes';
 import { GLTF } from 'three/examples/jsm/loaders/GLTFLoader';
+import { of } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 @Component({
   selector: 'app-character',
@@ -30,26 +32,41 @@ export class CharacterComponent implements OnInit {
   rotation = [0, 0, 0] as NgtTriple;
   private coins: any = [];
   cryptos$: Observable<any> = new Observable();
-
+  
 
   readonly adam$ = this.gltfLoader.load('assets/adam.glb') as unknown as Observable<AdamGLTF>;
 
-  body = this.physicBody.useBox(() => ({
+  body = this.physicBody.useBox(() => {
+
+    let me = this;
+
+    return {
     position: this.position,
     rotation: this.rotation,
-    args:[1, 1, 1],
+    args:[1, 0.011,1],
    
     mass:1,
-    onCollide(e) {
-      if (e.body.id === 22) {
-        console.log('llamamiento ngrx de algo de cubo 2');
+    onCollideBegin(e) {
+      if (e.body.id === 24) {
+        me.store.dispatch(enterbox2({msg:"dentro de la caja 2"}));
       }else if(e.body.id === 23){
-        console.log('llamamiento ngrx de algo de cubo 3');
+        me.store.dispatch(enterbox3({msg:"dentro de la caja 3"}));
 
       }
     },
-  }));
-    
+    onCollideEnd(e) {
+      if (e.body.id === 24) {
+        me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
+      }else if(e.body.id === 23){
+        me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
+
+      }
+
+    },
+
+  };
+
+});
 
 
   sphereRef = this.physicBody.useSphere<THREE.InstancedMesh>(() => ({
@@ -61,7 +78,6 @@ export class CharacterComponent implements OnInit {
         console.log('llamamiento ngrx de algo de cubo 2');
       }else if(e.body.id === 23){
         console.log('llamamiento ngrx de algo de cubo 3');
-
       }
     },
   }));
@@ -72,7 +88,6 @@ export class CharacterComponent implements OnInit {
     private gltfLoader: NgtGLTFLoader
   ) {}
   ngOnInit(): void {}
-
   hovered = false;
   hovered1 = false;
   hovered2 = false;
