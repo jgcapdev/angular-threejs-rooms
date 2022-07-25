@@ -4,7 +4,7 @@ import {
   NgtLoader,
   NgtTriple,
 } from '@angular-three/core';
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit, Type } from '@angular/core';
 import { Mesh } from 'three';
 import * as THREE from 'three';
 import { NgtTextureLoader } from '@angular-three/soba/loaders';
@@ -26,6 +26,7 @@ export class StandardRoomComponent implements OnInit {
   boxRef = this.physicBody.useBox(() => ({
     position: this.position,
     args:this.args,
+    type: 'Static',
     mass:0.1
     
   }));

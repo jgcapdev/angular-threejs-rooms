@@ -36,8 +36,9 @@ export class CharacterComponent implements OnInit {
 
   body = this.physicBody.useBox(() => ({
     position: this.position,
-    
+    rotation: this.rotation,
     args:[1, 1, 1],
+   
     mass:1,
     onCollide(e) {
       if (e.body.id === 22) {
@@ -90,6 +91,7 @@ export class CharacterComponent implements OnInit {
   handleKeyboardEvent(event: KeyboardEvent) {
     if (event.key == 'w') {
       this.position[2] -= this.speed;
+      
       this.moveCharacter(this.position);
     } else if (event.key == 's') {
       this.position[2] += this.speed;
@@ -108,6 +110,13 @@ export class CharacterComponent implements OnInit {
     this.body.api.position.subscribe((pos) => {
       if (this.position && this.controllable) {
         this.body.api.position.set(position[0], pos[1], position[2]);
+      }
+    });
+  }
+  rotationCharacter(rotation: any) {
+    this.body.api.rotation.subscribe((pos) => {
+      if (this.rotation && this.controllable) {
+        this.body.api.rotation.set(rotation[0], pos[1], rotation[2]);
       }
     });
   }
