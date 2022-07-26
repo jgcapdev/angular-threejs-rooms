@@ -48,9 +48,9 @@ export class CharacterComponent implements OnInit {
     mass:1,
     onCollideBegin(e) {
       if (e.body.id === 22) {
-        me.store.dispatch(enterbox2({msg:"dentro de la caja 2"}));
+        me.store.dispatch(enterbox2({msg:"Dentro de la caja 2"}));
       }else if(e.body.id === 23){
-        me.store.dispatch(enterbox3({msg:"dentro de la caja 3"}));
+        me.store.dispatch(enterbox3({msg:"Dentro de la caja 3"}));
 
       }
     },
