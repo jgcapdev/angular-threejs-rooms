@@ -36,7 +36,7 @@ export class AppComponent {
   }
   
   /*funcion(){
-   
+   a
       (this.text$).subscribe(data => {
         this.msgIndi = data
     });
