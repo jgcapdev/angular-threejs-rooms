@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
 import { CryptoModel } from 'src/app/core/models/Crypto.interface';
+import { MsgModel } from 'src/app/core/models/Msg.interface';
 
 export const loadCryptos = createAction('[Crypto List] Load cryptos');
 

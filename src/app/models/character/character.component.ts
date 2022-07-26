@@ -47,7 +47,7 @@ export class CharacterComponent implements OnInit {
    
     mass:1,
     onCollideBegin(e) {
-      if (e.body.id === 24) {
+      if (e.body.id === 22) {
         me.store.dispatch(enterbox2({msg:"dentro de la caja 2"}));
       }else if(e.body.id === 23){
         me.store.dispatch(enterbox3({msg:"dentro de la caja 3"}));
@@ -55,7 +55,7 @@ export class CharacterComponent implements OnInit {
       }
     },
     onCollideEnd(e) {
-      if (e.body.id === 24) {
+      if (e.body.id === 22) {
         me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
       }else if(e.body.id === 23){
         me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
@@ -87,7 +87,10 @@ export class CharacterComponent implements OnInit {
     private physicBody: NgtPhysicBody,
     private gltfLoader: NgtGLTFLoader
   ) {}
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    
+    this.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
+  }
   hovered = false;
   hovered1 = false;
   hovered2 = false;

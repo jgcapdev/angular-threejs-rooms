@@ -1,3 +1,3 @@
 export interface MsgModel {
-    msg:string
-  }
+msg: string;
+}

@@ -25,9 +25,10 @@
 
     <!-- Text -->
     <ngt-soba-text
-    text=""
+    [text]= "text$|async|json"
     [position]="[-8, 25, 20]"
     [rotation]="[0, 0.5 | pi, 0]"
+    
     fontSize="6"
     outlineColor="white"
     outlineWidth="0.3"

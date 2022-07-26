@@ -17,7 +17,7 @@ import { FloorComponent } from './models/floor/floor.component';
 // NgRx
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { cryptosReducer } from './state/reducers/cryptos.reducer';
+import { cryptosReducer, msgReducer } from './state/reducers/cryptos.reducer';
 import { CryptosEffects } from './state/effects/cryptos.effects';
 
 // Angular Three
@@ -78,7 +78,7 @@ import { NgtGroupModule } from '@angular-three/core/group';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ cryptos: cryptosReducer }),
+    StoreModule.forRoot({ cryptos: cryptosReducer, msg:msgReducer }),
     EffectsModule.forRoot([CryptosEffects]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
