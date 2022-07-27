@@ -66,6 +66,8 @@ import {
 import { NgtPhysicsModule } from '@angular-three/cannon';
 import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 import { NgtGroupModule } from '@angular-three/core/group';
+import { SillonGLTFComponent } from './models/sillon-gltf/sillon-gltf.component';
+
 
 @NgModule({
   declarations: [
@@ -74,6 +76,8 @@ import { NgtGroupModule } from '@angular-three/core/group';
     CharacterComponent,
     LightsComponent,
     FloorComponent,
+    SillonGLTFComponent,
+   
 
   ],
   imports: [

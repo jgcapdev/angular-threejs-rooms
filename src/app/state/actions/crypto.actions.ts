@@ -23,3 +23,11 @@ export const exitbox = createAction(
   '[Exit Box] BoxExit',
   props<{ msg: string }>()
 );
+export const enterSofa= createAction(
+  '[Enter Sofa] SofaEnter',
+  props<{ msg: string }>()
+);
+export const exitSOFA = createAction(
+  '[Exit sofa] sofaExit',
+  props<{ msg: string }>()
+);

@@ -52,6 +52,8 @@ export class CharacterComponent implements OnInit {
       }else if(e.body.id === 23){
         me.store.dispatch(enterbox3({msg:"Dentro de la caja 3"}));
 
+      }else if(e.body.id === 41){
+        me.store.dispatch(enterbox3({msg:"En el Sofá"}));
       }
     },
     onCollideEnd(e) {
@@ -59,6 +61,8 @@ export class CharacterComponent implements OnInit {
         me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
       }else if(e.body.id === 23){
         me.store.dispatch(exitbox({msg:"Fuera de las cajas"}));
+      }else if(e.body.id === 41){
+        me.store.dispatch(exitbox({msg:"Fuera del Sofá"}));
 
       }
 

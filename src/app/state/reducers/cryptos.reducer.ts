@@ -7,7 +7,9 @@ import { MsgModel } from 'src/app/core/models/Msg.interface';
 import {
   enterbox2,
   enterbox3,
+  enterSofa,
   exitbox,
+  exitSOFA,
   loadCryptos,
   loadedCryptoError,
   loadedCryptos,
@@ -58,6 +60,14 @@ export const msgReducer = createReducer(
     }
   }),
   on(exitbox,(state, {msg}) => {
+    return{...state, msg:msg 
+    }
+  }),
+  on(enterSofa,(state, {msg}) => {
+    return{...state, msg:msg 
+    }
+  }),
+  on(exitSOFA,(state, {msg}) => {
     return{...state, msg:msg 
     }
   })

@@ -53,3 +53,11 @@ export interface AdamGLTF extends GLTF {
     [key in 'Wolf3D_Eye' | 'Wolf3D_Body' | 'Wolf3D_Glasses' | 'Wolf3D_Hair' | 'Wolf3D_Skin' | 'Wolf3D_Outfit_Bottom' | 'Wolf3D_Outfit_Footwear' | 'Wolf3D_Outfit_Top'| 'Wolf3D_Teeth']: THREE.MeshStandardMaterial;
   };
 }
+export interface SillonGLTF extends GLTF {
+  nodes: {
+    [key in 'wall' | 'floor' | 'rug' | 'couch' | 'cushon' | 'pillow']: THREE.Mesh;
+  };
+  materials: {
+    [key in 'Material'| 'Material']: THREE.MeshStandardMaterial;
+  };
+}

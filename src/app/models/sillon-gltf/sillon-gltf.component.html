@@ -1,0 +1,13 @@
+<ng-container *ngIf="sillon$ | async as sillon">
+<ngt-group [ref]="physi.ref" [scale]="4" >
+<ngt-mesh
+[geometry]="sillon.nodes.couch.geometry"
+[material]="sillon.materials.Material"
+
+[rotation]="[0, 1.58, 0]"
+
+[castShadow]="true"
+></ngt-mesh>
+
+</ngt-group>
+</ng-container>
