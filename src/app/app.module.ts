@@ -9,10 +9,10 @@ import { environment } from '../environments/environment';
 
 // Components
 import { AppComponent } from './app.component';
-import { StandardRoomComponent } from './models/standard-room/standard-room.component';
-import { CharacterComponent } from './models/character/character.component';
+import { StandardRoomComponent } from './models1-routing/standard-room/standard-room.component';
+import { CharacterComponent } from './models1-routing/character/character.component';
 import { LightsComponent } from './lights/lights/lights.component';
-import { FloorComponent } from './models/floor/floor.component';
+import { FloorComponent } from './models1-routing/floor/floor.component';
 
 // NgRx
 import { StoreModule } from '@ngrx/store';
@@ -66,7 +66,8 @@ import {
 import { NgtPhysicsModule } from '@angular-three/cannon';
 import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 import { NgtGroupModule } from '@angular-three/core/group';
-import { SillonGLTFComponent } from './models/sillon-gltf/sillon-gltf.component';
+import { SillonGLTFComponent } from './models1-routing/sillon-gltf/sillon-gltf.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -120,6 +121,7 @@ import { SillonGLTFComponent } from './models/sillon-gltf/sillon-gltf.component'
     NgtGroupModule,
     NgtSobaGizmoViewcubeModule,
     NgtPhysicsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
