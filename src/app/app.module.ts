@@ -68,6 +68,10 @@ import { NgtPrimitiveModule } from '@angular-three/core/primitive';
 import { NgtGroupModule } from '@angular-three/core/group';
 import { SillonGLTFComponent } from './models1-routing/sillon-gltf/sillon-gltf.component';
 import { AppRoutingModule } from './app-routing.module';
+import { CubeComponetComponent } from './models2-routing/cube-componet/cube-componet.component';
+import { PadreComponentComponent } from './models2-routing/padre-component/padre-component.component';
+import { PadreComponent } from './models1-routing/padre/padre.component';
+import { SphereComponentComponent } from './models2-routing/sphere-component/sphere-component.component';
 
 
 @NgModule({
@@ -78,6 +82,10 @@ import { AppRoutingModule } from './app-routing.module';
     LightsComponent,
     FloorComponent,
     SillonGLTFComponent,
+    CubeComponetComponent,
+    PadreComponentComponent,
+    PadreComponent,
+    SphereComponentComponent,
    
 
   ],

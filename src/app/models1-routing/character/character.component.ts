@@ -4,7 +4,7 @@ import { NgtGLTFLoader } from '@angular-three/soba/loaders';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { AdamGLTF } from 'src/app/app.component';
+import { AdamGLTF } from '../padre/padre.component';
 import { CryptoService } from 'src/app/services/crypto.service';
 import { enterbox2, enterbox3, exitbox, loadCryptos } from 'src/app/state/actions/crypto.actions';
 import { AppState } from 'src/app/state/app.state';

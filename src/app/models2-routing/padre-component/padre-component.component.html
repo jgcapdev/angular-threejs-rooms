@@ -1,0 +1,17 @@
+<div class="canvas-container">
+<ngt-canvas>
+    <ngt-ambient-light intensity="0.5"></ngt-ambient-light>
+    <ngt-spot-light [position]="10" angle="0.15" penumbra="1"></ngt-spot-light>
+    <ngt-point-light [position]="-10"></ngt-point-light>
+    <app-cube-componet [position]="[1.2, 0, 0]"></app-cube-componet>
+    <!--                    👇 move this cube 1.2 unit to the left -->
+    <app-cube-componet [position]="[-1.2, 0, 0]"></app-cube-componet>
+
+    <app-sphere-component [position]="[0, -2, 0]"></app-sphere-component>
+
+    <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
+    
+  </ngt-canvas>
+  
+</div> 
+  

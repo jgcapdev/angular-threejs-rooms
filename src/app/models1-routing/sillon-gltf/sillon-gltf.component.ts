@@ -4,7 +4,7 @@ import { NgtGLTFLoader } from '@angular-three/soba/loaders';
 import { Component, HostListener, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { SillonGLTF } from 'src/app/app.component';
+import { SillonGLTF } from '../padre/padre.component'; 
 
 
 import { AppState } from 'src/app/state/app.state';

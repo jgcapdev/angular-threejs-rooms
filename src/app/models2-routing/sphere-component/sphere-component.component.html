@@ -1,0 +1,13 @@
+<ngt-mesh (beforeRender)="onSphereBeforeRender($event)"
+    (click)="active = !active"
+    (pointerover)="hovered = true"
+    (pointerout)="hovered = false"
+    [position]="position"
+    routerLink=""
+   >
+
+
+    <ngt-sphere-geometry></ngt-sphere-geometry>
+    <ngt-mesh-standard-material [color]="hovered ? 'turquoise' : 'grey'"></ngt-mesh-standard-material>
+
+  </ngt-mesh>

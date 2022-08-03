@@ -1,0 +1,103 @@
+<div class="canvas-container">
+    <ngt-canvas
+      initialLog
+      projectContent
+      [shadows]="true"
+      [scene]="{
+        position: [0, 0, 0],
+        background: background
+      }"
+      [camera]="{
+        near: 1,
+        far: 1000,
+        fov: 40,
+        position: [70, 20, 70]
+      }"
+    >
+      <!-- Lighs -->
+      <app-lights [setLights]="true"></app-lights>
+  
+      <!-- Sky and environment -->
+      <!-- <ngt-soba-environment
+        files="assets/sky/adamsbridge.hdr"
+      ></ngt-soba-environment>
+      <ngt-soba-sky></ngt-soba-sky>-->
+  
+      <!-- Text -->
+      <ngt-soba-text
+      [text]= "text$|async|json"
+      [position]="[-8, 25, 20]"
+      [rotation]="[0, 0.5 | pi, 0]"
+      
+      fontSize="6"
+      outlineColor="white"
+      outlineWidth="0.3"
+      color="blue"
+      letterSpacing="0"
+      #text
+      routerLink="/cubo"
+    >
+    </ngt-soba-text>
+  
+     
+  
+      <ngt-physics>
+        <!-- Character -->
+        <app-character [position]="[30, 20, 30]" [scale]="1" [controllable]="true"></app-character>
+  
+        <!-- Rooms -->
+        <app-standard-room
+          [args]="[20, 20, 20]"
+          [position]="[10, 10, 10]"
+          
+     
+        ></app-standard-room>
+  
+        <app-standard-room
+          [position]="[15, 5, 50]"
+          [args]="[20, 10, 10]"
+         
+        ></app-standard-room>
+  
+        <app-standard-room
+          [position]="[50, 4, 16]"
+          [args]="[25, 8, 15]"
+          
+        ></app-standard-room>
+  
+        <!-- Floor -->
+        <app-floor
+          [position]="[0, -0.01, 0]"
+          [rotation]="[-0.5 | pi, 0, 0]"
+          [args]="[200,200]"
+        ></app-floor>
+        <app-sillon-gltf [position]="[3,0.1,10]" [args]="[5,0.2,4]"> </app-sillon-gltf>
+      </ngt-physics>
+  
+      
+      <!-- Gizmo Helper -->
+      <ngt-soba-gizmo-helper
+        name="GizmoHelper"
+        [alignment]="'top-right'"
+        [margin]="[80, 80]"
+        [scale]="0.75"
+      >
+        <ng-template ngt-soba-gizmo-helper-content>
+          <ngt-soba-gizmo-viewcube
+            font="2rem Inter var, Arial, sans-serif"
+            opacity="1"
+            color="#00c8d6"
+            strokeColor="#00b0bd"
+            textColor="black"
+            hoverColor="#00b0bd"
+          ></ngt-soba-gizmo-viewcube>
+        </ng-template>
+      </ngt-soba-gizmo-helper>
+  
+      <!-- Helpers -->
+      <ngt-axes-helper [args]="[100]"></ngt-axes-helper>
+      <ngt-soba-orbit-controls></ngt-soba-orbit-controls>
+      <ngt-stats></ngt-stats>
+    </ngt-canvas>
+  </div>
+  
