@@ -16,7 +16,7 @@ export class SphereComponentComponent implements OnInit {
   ngOnInit(): void {
   }
   onSphereBeforeRender($event: { state: NgtRenderState; object: Mesh }) {
-    const cube = $event.object;
-    cube.rotation.x += 0.01;
+    const sphere = $event.object;
+    sphere.rotation.x += 0.01;
   }
 }
